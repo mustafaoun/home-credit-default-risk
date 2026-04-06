@@ -1,0 +1,40 @@
+# Model Configuration
+model:
+  name: "XGBoost"
+  n_estimators: 100
+  max_depth: 6
+  learning_rate: 0.1
+  random_state: 42
+  eval_metric: "logloss"
+
+# Preprocessing Configuration
+preprocessing:
+  numeric_strategy: "median"
+  scaler_type: "robust"
+  categorical_encoding: "onehot"
+  handle_unknown: "ignore"
+  numeric_cols: []  # Auto-detected
+  categorical_cols: []  # Auto-detected (< 10 unique values)
+
+# Train/Test Split
+train_test_split:
+  test_size: 0.2
+  stratify: true
+  random_state: 42
+
+# SHAP Configuration
+shap:
+  background_samples: 100  # Samples for SHAP background
+  test_samples: 100  # Samples to explain
+
+# API Configuration
+api:
+  host: "0.0.0.0"
+  port: 8000
+  debug: false
+  max_request_size: 1000000  # bytes
+
+# Logging
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"

@@ -1,0 +1,96 @@
+# Bytecode & caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Distribution / packaging
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Data (user-provided, too large)
+data/raw/*.csv
+data/raw/*.xlsx
+data/raw/*.json
+data/processed/*.pkl
+data/processed/*.parquet
+
+# Trained models (regenerate on train)
+models/*.pkl
+models/*.joblib
+models/*.onnx
+
+# Results & outputs (regenerate on evaluate)
+results/outputs/*.csv
+results/outputs/*.json
+results/plots/*.png
+results/plots/*.jpg
+results/plots/*.pdf
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb_checkpoints
+notebooks/.ipynb_checkpoints/
+
+# Logs
+*.log
+logs/
+
+# pytest
+.pytest_cache/
+.coverage
+htmlcov/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*.swo
+*~
+
+# Project-specific
+.render/
+render.yaml.local
+
