@@ -15,7 +15,7 @@ home-credit-default-risk/
 ├── docs/                       # Documentation
 ├── deploy/Dockerfile           # Docker image
 ├── tests/                      # Unit tests (optional)
-└── deploy/                     # Docker & Render config
+└── deploy/                     # Docker configuration
 ```
 
 ## Key Directories
@@ -30,7 +30,7 @@ home-credit-default-risk/
 | **configs/** | Optional YAML configuration |
 | **results/** | Model outputs & plots |
 | **docs/** | Documentation (MODEL_CARD.md, etc.) |
-| **deploy/** | Docker & deployment configs |
+| **deploy/** | Docker image & configuration |
 
 ## Data Flow
 
@@ -42,6 +42,7 @@ notebooks/W2.ipynb  →  src/ml/train.py  →  models/model.pkl  →  src/api/ap
 ## Notable Decisions
 
 - **One model file**: `model.pkl` includes preprocessor + classifier (single serialize)
+- **Local Docker deployment**: Run locally with `docker run`; no cloud platform required
 - **No configs needed**: Hardcoded values in code are fine for simple projects; use `configs/config.yaml` only if you need multiple environments (dev/prod)
 - **Results folder**: Optional; store predictions, metrics, plots here for post-analysis
 - **Tests optional**: Add when code complexity warrants it

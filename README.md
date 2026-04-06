@@ -1,13 +1,12 @@
 # Home Credit Default Risk API
 
-**End-to-end ML pipeline** | **XGBoost (ROC-AUC 0.7466)** | **SHAP Explanations** | **FastAPI + Docker + Render**
+**End-to-end ML pipeline** | **XGBoost (ROC-AUC 0.7466)** | **SHAP Explanations** | **FastAPI + Docker**
 
 [![ROC-AUC](https://img.shields.io/badge/ROC--AUC-0.7466-brightgreen)](docs/MODEL_CARD.md)
 [![Docker](https://img.shields.io/badge/Docker-Built-blue)](deploy/Dockerfile)
-[![Render](https://img.shields.io/badge/Live%20API-Deployed-green?logo=render)](render.yaml)
 [![Python](https://img.shields.io/badge/Python-3.11%2B-blue)](requirements.txt)
 
-**Live Demo API** (run locally with Docker): [Instructions below](#-how-to-run-locally)  
+**Run locally with Docker**: [Instructions below](#how-to-run-locally)  
 **GitHub Repo**: [This repository]
 
 ---
@@ -32,7 +31,7 @@ Replacing a rule-based approval system with our XGBoost model (tuned at threshol
 - Default loss: $7,000 per default
 - Better cutoff threshold moves precision from 18% → 33%, recall from 60% → 65%
 
-**Methodology**: See [notebooks/W2.ipynb](notebooks/W2.ipynb) for full EDA, feature engineering, and threshold optimization analysis.
+**Methodology**: Full EDA, feature engineering, model training, and SHAP analysis in [notebooks/W2.ipynb](notebooks/W2.ipynb).
 
 ---
 
@@ -88,7 +87,7 @@ Replacing a rule-based approval system with our XGBoost model (tuned at threshol
 
 ### **Model Comparison**
 
-Three classification models were systematically trained and evaluated. Full implementation and results in [notebooks/W2.ipynb](notebooks/W2.ipynb) (see cell 3 for complete comparison code).
+Three classification models were trained and evaluated systematically. Implementation in [notebooks/W2.ipynb](notebooks/W2.ipynb) (cell 3: model comparison).
 
 | Model | ROC-AUC | Precision (@ 0.12) | Recall | Notes |
 |-------|---------|---|---|---|
@@ -341,7 +340,6 @@ home-credit-default-risk/
 ## Deployment Status
 
 - **Local**: Run with Docker (see instructions above)
-- **Cloud**: Deployed on Render (auto-deploy from GitHub main branch)
 - **API docs**: Interactive Swagger UI at `/docs` (when running)
 - **Model size**: ~50 MB (XGBoost + preprocessor + SHAP data)
 
