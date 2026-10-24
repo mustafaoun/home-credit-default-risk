@@ -1,10 +1,17 @@
 [build-system]
-requires = ["hatchling"]
+requires = ["hatchling", "hatch-requirements-txt"]
 build-backend = "hatchling.build"
 
 [project]
 name = "home-credit-risk"
 version = "0.1.0"
-description = "Home Credit Default Risk Prediction API (XGBoost + SHAP)"
+description = "Educational Home Credit risk API with XGBoost and SHAP"
 readme = "README.md"
-requires-python
+requires-python = ">=3.11"
+dynamic = ["dependencies"]
+
+[tool.hatch.metadata.hooks.requirements_txt]
+files = ["requirements.txt"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
